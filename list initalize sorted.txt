@@ -1,0 +1,42 @@
+SortedType list;
+    ItemType item;
+    bool found;
+
+    // Test IsFull and LengthIs on empty list
+    cout << "List is full: " << (list.IsFull() ? "Yes" : "No") << endl;
+    cout << "Length of list: " << list.LengthIs() << endl;
+
+    // Insert items
+    int values[] = {10, 20, 30, 40, 50};
+    for (int i = 0; i < 5; i++) {
+        item.Initialize(values[i]);
+        list.InsertItem(item);
+    }
+
+    // Check length after insertion
+    cout << "Length after insertions: " << list.LengthIs() << endl;
+
+    // Retrieve items
+    for (int i = 0; i < 5; i++) {
+        item.Initialize(values[i]);
+        list.RetrieveItem(item, found);
+        cout << "Retrieve " << values[i] << ": " << (found ? "Found" : "Not Found") << endl;
+    }
+
+    // Delete an item
+    item.Initialize(30);
+    list.DeleteItem(item);
+    cout << "Length after deleting 30: " << list.LengthIs() << endl;
+
+    // Check if 30 is still in the list
+    list.RetrieveItem(item, found);
+    cout << "Retrieve 30 after deletion: " << (found ? "Found" : "Not Found") << endl;
+
+    // Reset list and traverse using GetNextItem
+    list.ResetList();
+    cout << "List contents: ";
+    for (int i = 0; i < list.LengthIs(); i++) {
+        list.GetNextItem(item);
+        cout << item.ComparedTo(item) << " "; // Should print item values
+    }
+    cout << endl;

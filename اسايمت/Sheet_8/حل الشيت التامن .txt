@@ -1,0 +1,120 @@
+(1)mostafa split sorted
+
+void SortedType::SplitLists(SortedType& list1, SortedType& list2, ItemType item) {
+   int location=0;
+    for(int i=location;i<this->LengthIs();i++)
+    if(item.ComparedTo(info[i])==GREATER)
+    {
+        list1.InsertItem(info[i]);
+    }
+    else
+    {
+        list2.InsertItem(info[i]);
+    }
+   
+}
+
+
+(2) sorted
+
+void SortedType::SplitLists(SortedType& list1, SortedType& list2, ItemType item) {
+    for (int i = 0; i < LengthIs(); i++) {
+        if (item.ComparedTo(info[i]) == GREATER) {
+            list1.InsertItem(info[i]);
+        } else {
+            list2.InsertItem(info[i]);
+        }
+    }
+}
+
+
+
+
+(1)mostafa split sorted , unsorted
+
+void UnsortedType::unsortSplitLists(UnsortedType& list1, UnsortedType& list2, ItemType item) {
+   int location=0;
+    while(location<this->LengthIs()&&item.ComparedTo(info[location])!=EQUAL)
+    {
+
+        list1.InsertItem(info[location]);
+        location++;
+    }
+
+    for(int i=location;i<this->LengthIs();i++)
+    {
+        list2.InsertItem(info[i]);
+
+    }
+}
+
+
+(un ,un , unresult merge)
+
+void UnsortedType::MergeLists(UnsortedType& list, UnsortedType& result){
+
+for(int i=0;i<this->LengthIs();i++)
+{
+    result.InsertItem(info[i]);
+}
+for(int i=0;i<list.LengthIs();i++)
+{
+    result.InsertItem(list.info{i})
+}
+
+}
+
+
+
+(un ,un , sorted merge)
+
+
+void UnsortedType::MergeLists(UnsortedType& list, UnsortedType& result) {
+    int index1 = 0;
+    int index2 = 0;
+
+    while (index1 < this->LengthIs() && index2 < list.LengthIs()) {
+        if (this->info[index1].ComparedTo(list.info[index2]) == LESS ||
+            this->info[index1].ComparedTo(list.info[index2]) == EQUAL) {
+            result.InsertItem(info[index1]);
+            index1++;
+        } else {
+            result.InsertItem(list.info[index2]);
+            index2++;
+        }
+    }
+
+    while (index1 < this->LengthIs()) {
+        result.InsertItem(info[index1]);
+        index1++;
+    }
+
+    while (index2 < list.LengthIs()) {
+        result.InsertItem(list.info[index2]);
+        index2++;
+    }
+}
+
+
+sorted , sorted , sorted result
+
+
+void SortedType::MergeLists(SortedType& list, SortedType& result) {
+    
+    int index1=0;
+    int index2=0;
+    
+    while(index1<this->LengthIs())
+    {
+        if(info[index1].ComparedTo(list.info[index2])==LESS)
+        {
+            result.InsertItem(info[index1]);
+        }
+        index1++;
+    }
+    while(index2<list.LengthIs()){
+        result.InsertItem(list.info[index2]);
+        index2++;
+    }
+}
+  

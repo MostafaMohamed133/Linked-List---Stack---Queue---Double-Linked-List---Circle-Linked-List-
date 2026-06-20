@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1745606116 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\stacktype.cpp
+	"StackType.h"
+	<iostream>
+
+1745606091 c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\stacktype.h
+	"ItemType.h"
+
+1745649102 c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\itemtype.h
+	<fstream>
+
+1745943677 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\itemtype.cpp
+	<fstream>
+	"ItemType.h"
+
+1745943677 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\quetype.cpp
+	"QueType.h"
+
+1745605601 c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\quetype.h
+	"ItemType.h"
+
+1745943677 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\sortedtype.cpp
+	"SortedType.h"
+
+1745605550 c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\sortedtype.h
+	"ItemType.h"
+
+1745966516 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\unsortedtype.cpp
+	"UnsortedType.h"
+
+1745955000 c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\unsortedtype.h
+	"ItemType.h"
+
+1746102726 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\sheet_8\sheet_8\main.cpp
+	<iostream>
+	"ItemType.h"
+	"UnsortedType.h"
+	"SortedType.h"
+	"StackType.h"
+	"QueType.h"
+	<cstdlib>
+	<ctime>
+

@@ -1,0 +1,150 @@
+#include "UnsortedType.h"
+#include <iostream>
+#include <new>
+
+UnsortedType::UnsortedType() {
+    length = 0;
+    listData = nullptr;
+    currentPos = nullptr;
+}
+
+UnsortedType::~UnsortedType() {
+    MakeEmpty();
+}
+
+void UnsortedType::MakeEmpty() {
+    if (listData == nullptr) return;
+
+    NodeType* tempPtr = listData->next;
+    NodeType* toDelete;
+
+    while (tempPtr != listData) {
+        toDelete = tempPtr;
+        tempPtr = tempPtr->next;
+        delete toDelete;
+    }
+
+    delete listData;
+    listData = nullptr;
+    length = 0;
+}
+
+bool UnsortedType::IsFull() const {
+    try {
+        NodeType* node = new NodeType;
+        delete node;
+        return false;
+    } catch (...) {
+        return true;
+    }
+}
+
+int UnsortedType::LengthIs() const {
+    return length;
+}
+
+void UnsortedType::InsertItem(int item) {
+    NodeType* newNode = new NodeType;
+    newNode->info = item;
+
+    if (listData == nullptr) {
+        newNode->next = newNode;  // points to itself
+        listData = newNode;
+    } else {
+        newNode->next = listData->next;
+        listData->next = newNode;
+    }
+
+    listData = newNode;
+    length++;
+}
+
+void UnsortedType::DeleteItem(int item) {
+    if (listData == nullptr) return;
+
+    NodeType* curr = listData->next;
+    NodeType* prev = listData;
+
+    do {
+        if (curr->info == item) {
+            if (curr == listData) {
+                if (listData == listData->next) { // one node only
+                    delete listData;
+                    listData = nullptr;
+                } else {
+                    prev->next = curr->next;
+                    delete curr;
+                    listData = prev;
+                }
+            } else {
+                prev->next = curr->next;
+                delete curr;
+            }
+            length--;
+            return;
+        }
+        prev = curr;
+        curr = curr->next;
+    } while (curr != listData->next);
+}
+
+void UnsortedType::RetrieveItem(int& item, bool& found) {
+    if (listData == nullptr) {
+        found = false;
+        return;
+    }
+
+    NodeType* temp = listData->next;
+    found = false;
+
+    do {
+        if (temp->info == item) {
+            found = true;
+            item = temp->info;
+            return;
+        }
+        temp = temp->next;
+    } while (temp != listData->next);
+}
+
+void UnsortedType::ResetList() {
+    currentPos = listData;
+}
+
+void UnsortedType::GetNextItem(int& item) {
+    if (currentPos == nullptr) return;
+    currentPos = currentPos->next;
+    item = currentPos->info;
+}
+
+void UnsortedType::Print() const {
+    if (listData == nullptr) {
+        cout << "List is empty.\n";
+        return;
+    }
+
+    NodeType* temp = listData->next;
+    std::cout << "List contents: ";
+
+    do {
+        std::cout << temp->info << " ";
+        temp = temp->next;
+    } while (temp != listData->next);
+
+    std::cout << std::endl;
+}
+
+
+
+// The following definitions go into file ItemType.cpp.
+#include <fstream>
+#include "ItemType.h"
+class NodeType
+ {
+ int data;
+ NodeType* next;
+ };
+
+
+
+

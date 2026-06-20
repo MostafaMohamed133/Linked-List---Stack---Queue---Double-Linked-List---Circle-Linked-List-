@@ -1,0 +1,257 @@
+#include <fstream>
+#include "ItemType.h"
+
+ItemType::ItemType() {
+    value = 0;
+}
+
+ItemType::ItemType(int number) {   // New constructor to initialize value with an integer
+    value = number;
+}
+
+RelationType ItemType::ComparedTo(ItemType otherItem) const {
+    if (value < otherItem.value)
+        return LESS;
+    else if (value > otherItem.value)
+        return GREATER;
+    else return EQUAL;
+}
+
+
+void ItemType::Initialize(int number) {
+    value = number;
+}
+
+void ItemType::Print(std::ofstream& out) const {
+    out << value << " ";
+}
+
+
+
+
+
+2
+
+
+
+#include "SortedType.h"
+#include <iostream>
+using namespace std;
+
+SortedType::SortedType() {
+    head = nullptr;
+    tail = nullptr;
+    currentPos = nullptr;
+    length = 0;
+}
+
+SortedType::~SortedType() {
+    MakeEmpty();
+}
+
+void SortedType::MakeEmpty() {
+    NodeType* temp;
+    while (head != nullptr) {
+        temp = head;
+        head = head->next;
+        delete temp;
+    }
+    tail = nullptr;
+    length = 0;
+}
+
+bool SortedType::IsFull() const {
+    try {
+        NodeType* temp = new NodeType;
+        delete temp;
+        return false;
+    } catch (...) {
+        return true;
+    }
+}
+
+int SortedType::LengthIs() const {
+    return length;
+}
+
+void SortedType::InsertItem(int item) {
+    NodeType* newNode = new NodeType;
+    newNode->data = item;
+    newNode->next = nullptr;
+    newNode->prev = nullptr;
+
+    if (head == nullptr) {
+        // القائمة فاضية
+        head = tail = newNode;
+    }
+    else if (item < head->data) {
+        // الإدخال قبل الرأس
+        newNode->next = head;
+        head->prev = newNode;
+        head = newNode;
+    }
+    else {
+        // إدخال في الوسط أو النهاية
+        NodeType* current = head;
+
+        while (current->next != nullptr && current->next->data < item) {
+            current = current->next;
+        }
+
+        newNode->next = current->next;
+        newNode->prev = current;
+        current->next = newNode;
+
+        if (newNode->next != nullptr)
+            newNode->next->prev = newNode;
+        else
+            tail = newNode;  // إذا أضفناه في النهاية
+    }
+
+    length++;
+}
+
+void SortedType::DeleteItem(int item) {
+    NodeType* current = head;
+
+    while (current != nullptr) {
+        if (current->data == item) {
+            if (current->prev != nullptr)
+                current->prev->next = current->next;
+            else
+                head = current->next;
+
+            if (current->next != nullptr)
+                current->next->prev = current->prev;
+            else
+                tail = current->prev;
+
+            delete current;
+            length--;
+            return;
+        }
+
+        current = current->next;
+    }
+}
+
+void SortedType::RetrieveItem(int& item, bool& found) {
+    NodeType* current = head;
+    found = false;
+
+    while (current != nullptr && current->data <= item) {
+        if (current->data == item) {
+            found = true;
+            item = current->data;
+            return;
+        }
+        current = current->next;
+    }
+}
+
+void SortedType::ResetList() {
+    currentPos = nullptr;
+}
+
+void SortedType::GetNextItem(int& item) {
+    if (currentPos == nullptr)
+        currentPos = head;
+    else
+        currentPos = currentPos->next;
+
+    if (currentPos != nullptr)
+        item = currentPos->data;
+}
+
+void SortedType::Print() const {
+    NodeType* temp = head;
+    cout << "List (forward): ";
+    while (temp != nullptr) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+void SortedType::PrintReverse() const {
+    NodeType* temp = tail;
+    cout << "List (reverse): ";
+    while (temp != nullptr) {
+        cout << temp->data << " ";
+        temp = temp->prev;
+    }
+    cout << endl;
+}
+
+
+
+3
+#ifndef SORTEDTYPE_H
+#define SORTEDTYPE_H
+
+struct NodeType {
+    int data;
+    NodeType* next;
+    NodeType* prev;
+};
+
+class SortedType {
+public:
+    SortedType();
+    ~SortedType();
+
+    void MakeEmpty();
+    bool IsFull() const;
+    int LengthIs() const;
+    void InsertItem(int item);        // إدخال بترتيب
+    void DeleteItem(int item);        // حذف عنصر
+    void RetrieveItem(int& item, bool& found); // بحث
+    void ResetList();
+    void GetNextItem(int& item);
+    void Print() const;               // طباعة من head لـ tail
+    void PrintReverse() const;        // طباعة من tail لـ head
+
+private:
+    NodeType* head;
+    NodeType* tail;
+    NodeType* currentPos;
+    int length;
+};
+
+#endif
+
+
+
+4
+
+
+
+
+
+#ifndef ITEMTYPE_H
+#define ITEMTYPE_H
+#include <fstream>
+
+const int MAX_ITEMS = 5;
+enum RelationType { LESS, GREATER, EQUAL };
+template <class ItemType>
+struct NodeType {
+    ItemType info;
+    NodeType<ItemType>* next;
+    NodeType<ItemType>* prev;
+};
+class ItemType {
+public:
+    ItemType();                  // Default constructor
+    ItemType(int number);         // Constructor that accepts an integer
+    RelationType ComparedTo(ItemType) const;
+    void Print(std::ofstream&) const;
+    void Initialize(int number);
+    int GetValue() const { return value; }
+
+private:
+    int value;
+};
+
+#endif
+

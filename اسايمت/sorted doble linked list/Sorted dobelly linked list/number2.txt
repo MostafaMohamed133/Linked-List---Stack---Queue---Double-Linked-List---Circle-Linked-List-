@@ -1,0 +1,27 @@
+#include iostream
+#include fstream
+#include cstdlib
+#include ctime
+#include UnsortedType.h
+
+using namespace std;
+
+int main() {
+    UnsortedType list;
+    ItemType item;
+    const int NUM_ITEMS = 1000;
+
+    srand(time(0));  Seed for random number generation
+
+     Insert 1000 random values into the list
+    for (int i = 0; i  NUM_ITEMS; i++) {
+        int randomValue = rand() % 10000;  Generate a random number between 0 and 9999
+        item.Initialize(randomValue);
+        list.InsertItem(item);
+    }
+
+     Output list length to verify
+    cout  List length after inserting 1000 random values   list.LengthIs()  endl;
+
+    return 0;
+}

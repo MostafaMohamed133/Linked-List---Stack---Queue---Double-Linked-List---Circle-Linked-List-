@@ -1,0 +1,22 @@
+#ifndef ITEMTYPE_H
+#define ITEMTYPE_H
+
+#include <fstream>
+
+const int MAX_ITEMS = 5;
+enum RelationType { LESS, GREATER, EQUAL };
+
+class ItemType {
+public:
+    ItemType();                  // Default constructor
+    ItemType(int number);         // Constructor that accepts an integer
+    RelationType ComparedTo(ItemType) const;
+    void Print(std::ofstream&) const;
+    void Initialize(int number);
+    int GetValue() const { return value; }
+
+private:
+    int value;
+};
+
+#endif
