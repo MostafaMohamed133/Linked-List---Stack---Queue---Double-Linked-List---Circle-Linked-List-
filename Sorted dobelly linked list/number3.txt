@@ -1,0 +1,26 @@
+// Non-member function to calculate average
+double calculateAvg(const UnsortedList& list) {
+    if (list.length == 0) return 0.0;
+
+    double sum = 0;
+    for (int i = 0; i < list.length; i++) {
+        sum += list.items[i].GetValue();
+    }
+    return sum / list.length;
+}
+
+// Main Function
+int main() {
+    srand(time(0)); // Seed for random numbers
+    UnsortedList list;
+    ItemType item;
+
+    // Insert 1000 random values into the list
+    for (int i = 0; i < MAX_ITEMS; i++) {
+        item.Initialize(rand() % 1000); // Random number between 0-999
+        list.InsertItem(item);
+    }
+
+    cout << "Average of values in the list: " << calculateAvg(list) << endl;
+    return 0;
+}

@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1742588229 source:c:\users\blue lap\desktop\codeblocks\stack\main.cpp
+	<iostream>
+	"StackType.h"
+	<cstdlib>
+	<ctime>
+
+1742588229 c:\users\blue lap\desktop\codeblocks\stack\stacktype.h
+	"ItemType.h"
+
+1742588260 c:\users\blue lap\desktop\codeblocks\stack\itemtype.h
+	<iostream>
+
+1742588126 source:c:\users\blue lap\desktop\codeblocks\stack\stacktype.cpp
+	"StackType.h"
+	<iostream>
+	"ItemType.h"
+
+1745334400 source:c:\users\sh\desktop\⁄„·Ï œ« « «” —«ﬂ ‘—\stack\stacktype.cpp
+	"StackType.h"
+	<iostream>
+	"ItemType.h"
+
+1742588498 c:\users\sh\desktop\⁄„·Ï œ« « «” —«ﬂ ‘—\stack\stacktype.h
+	"ItemType.h"
+
+1745331381 c:\users\sh\desktop\⁄„·Ï œ« « «” —«ﬂ ‘—\stack\itemtype.h
+	<iostream>
+
+1745334045 source:c:\users\sh\desktop\⁄„·Ï œ« « «” —«ﬂ ‘—\stack\main.cpp
+	<iostream>
+	"StackType.h"
+	<cstdlib>
+	<ctime>
+

@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1741992687 source:d:\my_worled\fci\ai bua\data structur\sheets\sheet4\sorted\main.cpp
+	<iostream>
+	<fstream>
+	"UnsortedType.h"
+
+1741993779 source:d:\my_worled\fci\ai bua\data structur\sheets\sheet4\sorted\itemtype.cpp
+	<fstream>
+	"ItemType.h"
+
+1741993943 d:\my_worled\fci\ai bua\data structur\sheets\sheet4\sorted\itemtype.h
+	<fstream>
+
+1741993269 source:d:\my_worled\fci\ai bua\data structur\sheets\sheet4\sorted\sortedtype.cpp
+	"SortedType.h"
+
+1741993302 d:\my_worled\fci\ai bua\data structur\sheets\sheet4\sorted\sortedtype.h
+	"ItemType.h"
+
+1746213163 source:c:\users\sh\desktop\⁄„·Ï œ« « «” —«ﬂ ‘—\sorted\main.cpp
+	<iostream>
+	"SortedType.h"
+
+1746213255 c:\users\sh\desktop\⁄„·Ï œ« « «” —«ﬂ ‘—\sorted\sortedtype.h
+

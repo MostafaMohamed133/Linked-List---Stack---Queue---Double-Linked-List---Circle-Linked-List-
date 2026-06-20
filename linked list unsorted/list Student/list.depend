@@ -1,0 +1,76 @@
+# depslib dependency file v1.0
+1741378144 source:c:\users\blue lap\desktop\codeblocks\list\main.cpp
+	<iostream>
+	<fstream>
+	"ItemType.h"
+
+1741378060 c:\users\blue lap\desktop\codeblocks\list\itemtype.h
+	<fstream>
+
+1741378220 source:c:\users\blue lap\desktop\codeblocks\list\itemtype.cpp
+	<fstream>
+	"ItemType.h"
+
+1741378520 source:c:\users\blue lap\desktop\codeblocks\list\unsortedtype.cpp
+	"UnsortedType.h"
+
+1741378328 c:\users\blue lap\desktop\codeblocks\list\unsortedtype.h
+	"ItemType.h"
+
+1741378222 source:e:\sheet4\list\itemtype.cpp
+	<fstream>
+	"ItemType.h"
+
+1741378062 e:\sheet4\list\itemtype.h
+	<fstream>
+
+1741378706 source:e:\sheet4\list\main.cpp
+	<iostream>
+	<fstream>
+	"UnsortedType.h"
+
+1741378330 e:\sheet4\list\unsortedtype.h
+	"ItemType.h"
+
+1741378522 source:e:\sheet4\list\unsortedtype.cpp
+	"UnsortedType.h"
+
+1741378222 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\list student\list student\itemtype.cpp
+	<fstream>
+	"ItemType.h"
+
+1745274898 c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\list student\list student\itemtype.h
+	<fstream>
+
+1745318465 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\list student\list student\unsortedtype.cpp
+	"UnsortedType.h"
+
+1745325947 c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\list student\list student\unsortedtype.h
+	"ItemType.h"
+
+1745325716 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\list student\list student\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"UnsortedType.h"
+
+1746199489 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\linked list unsorted\list student\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"UnsortedType.h"
+
+1746201022 c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\linked list unsorted\list student\unsortedtype.h
+	"ItemType.h"
+
+1745278498 c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\linked list unsorted\list student\itemtype.h
+	<fstream>
+
+1746200914 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\linked list unsorted\list student\itemtype.cpp
+	<fstream>
+	"ItemType.h"
+
+1746201107 source:c:\users\sh\desktop\Úãáì ÏÇÊÇ ÇÓÊÑÇßÊÔÑ\linked list unsorted\list student\unsortedtype.cpp
+	"UnsortedType.h"
+	<iostream>
+
